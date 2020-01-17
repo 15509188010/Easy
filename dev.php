@@ -21,12 +21,12 @@ return [
     'TEMP_DIR'    => '/logs/Temp',
     'LOG_DIR'     => 'logs/Log',
 
-    /**************mysql****************/
+    /**************MYSQL****************/
     'MYSQL'       => [
-        'host'              => '127.0.0.1',
+        'host'              => '192.168.0.110',//TODO(由于是在本地docker容器中的mysql,所以写ipv4地址)
         'port'              => 3300,
-        'user'              => 'root',
-        'password'          => '123456',
+        'user'              => 'liaozesong',
+        'password'          => 'Lzslov123!',
         'database'          => 'test',
         'timeout'           => 5,
         'charset'           => 'utf8mb4',

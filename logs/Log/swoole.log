@@ -19,3 +19,60 @@ Stack trace:
   thrown in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php on line 21
 [2020-01-16 08:28:00 $470.0]	WARNING	swManager_check_exit_status: worker#1[pid=474] abnormal exit, status=255, signal=0
 [2020-01-17 02:03:04 $28.0]	INFO	Server is reloading all workers now
+[2020-01-17 02:35:48 $28.0]	INFO	Server is reloading all workers now
+[2020-01-17 02:38:34 *58.4]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[HY000] [2002] Connection refused in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php:21
+Stack trace:
+#0 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\ORM\Db\MysqlPool->createObject()
+#1 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(230): EasySwoole\Pool\AbstractPool->initObject()
+#2 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(216): EasySwoole\Pool\AbstractPool->keepMin(5)
+#3 {main}
+  thrown in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php on line 21
+[2020-01-17 02:38:34 $28.0]	WARNING	swManager_check_exit_status: worker#4[pid=58] abnormal exit, status=255, signal=0
+[2020-01-17 02:40:18 *61.4]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[HY000] [2002] Connection refused in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php:21
+Stack trace:
+#0 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\ORM\Db\MysqlPool->createObject()
+#1 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(230): EasySwoole\Pool\AbstractPool->initObject()
+#2 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(216): EasySwoole\Pool\AbstractPool->keepMin(5)
+#3 {main}
+  thrown in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php on line 21
+[2020-01-17 02:40:18 $28.0]	WARNING	swManager_check_exit_status: worker#4[pid=61] abnormal exit, status=255, signal=0
+[2020-01-17 02:47:58 *71.4]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[HY000] [2002] Connection refused in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php:21
+Stack trace:
+#0 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\ORM\Db\MysqlPool->createObject()
+#1 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(230): EasySwoole\Pool\AbstractPool->initObject()
+#2 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(216): EasySwoole\Pool\AbstractPool->keepMin(5)
+#3 {main}
+  thrown in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php on line 21
+[2020-01-17 02:47:58 $64.0]	WARNING	swManager_check_exit_status: worker#4[pid=71] abnormal exit, status=255, signal=0
+[2020-01-17 02:50:21 *80.4]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[HY000] [2002] Connection refused in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php:21
+Stack trace:
+#0 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\ORM\Db\MysqlPool->createObject()
+#1 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(230): EasySwoole\Pool\AbstractPool->initObject()
+#2 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(216): EasySwoole\Pool\AbstractPool->keepMin(5)
+#3 {main}
+  thrown in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php on line 21
+[2020-01-17 02:50:21 $64.0]	WARNING	swManager_check_exit_status: worker#4[pid=80] abnormal exit, status=255, signal=0
+[2020-01-17 02:51:28 *90.4]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[HY000] [2002] Connection refused in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php:21
+Stack trace:
+#0 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\ORM\Db\MysqlPool->createObject()
+#1 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(230): EasySwoole\Pool\AbstractPool->initObject()
+#2 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(216): EasySwoole\Pool\AbstractPool->keepMin(5)
+#3 {main}
+  thrown in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php on line 21
+[2020-01-17 02:51:28 $83.0]	WARNING	swManager_check_exit_status: worker#4[pid=90] abnormal exit, status=255, signal=0
+[2020-01-17 02:52:56 *110.4]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[HY000] [2002] DNS Lookup resolve failed in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php:21
+Stack trace:
+#0 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\ORM\Db\MysqlPool->createObject()
+#1 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(230): EasySwoole\Pool\AbstractPool->initObject()
+#2 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(216): EasySwoole\Pool\AbstractPool->keepMin(5)
+#3 {main}
+  thrown in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php on line 21
+[2020-01-17 02:52:56 $103.0]	WARNING	swManager_check_exit_status: worker#4[pid=110] abnormal exit, status=255, signal=0
+[2020-01-17 02:55:17 *130.4]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[HY000] [2002] DNS Lookup resolve failed in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php:21
+Stack trace:
+#0 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\ORM\Db\MysqlPool->createObject()
+#1 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(230): EasySwoole\Pool\AbstractPool->initObject()
+#2 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(216): EasySwoole\Pool\AbstractPool->keepMin(5)
+#3 {main}
+  thrown in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php on line 21
+[2020-01-17 02:55:17 $123.0]	WARNING	swManager_check_exit_status: worker#4[pid=130] abnormal exit, status=255, signal=0

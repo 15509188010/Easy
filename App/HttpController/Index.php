@@ -2,10 +2,11 @@
 
 namespace App\HttpController;
 
-use App\Model\User;
 use EasySwoole\Http\AbstractInterface\Controller;
 use EasySwoole\Component\Csp;
 use EasySwoole\ORM\DbManager;
+
+use App\Model\User;
 
 class Index extends Controller
 {
