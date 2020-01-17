@@ -1,0 +1,26 @@
+[2020-01-15 11:51:01][DEBUG][ERROR] : [Uncaught Error: Class 'App\HttpController\co' not found in /data/www/App/HttpController/Index.php:16
+Stack trace:
+#0 {main}
+  thrown at file:/data/www/App/HttpController/Index.php line:16]
+[2020-01-16 14:19:56][DEBUG][ERROR] : [Uncaught ArgumentCountError: Too few arguments to function App\HttpController\Index::App\HttpController\{closure}(), 0 passed and exactly 1 expected in /data/www/App/HttpController/Index.php:16
+Stack trace:
+#0 [internal function]: App\HttpController\Index->App\HttpController\{closure}()
+#1 /data/www/vendor/easyswoole/component/src/Csp.php(45): call_user_func(Object(Closure))
+#2 {main}
+  thrown at file:/data/www/App/HttpController/Index.php line:16]
+[2020-01-16 16:01:13][DEBUG][ERROR] : [Uncaught TypeError: Argument 1 passed to EasySwoole\ORM\Db\Connection::__construct() must be an instance of EasySwoole\ORM\Db\Config, array given, called in /data/www/EasySwooleEvent.php on line 28 and defined in /data/www/vendor/easyswoole/orm/src/Db/Connection.php:16
+Stack trace:
+#0 /data/www/EasySwooleEvent.php(28): EasySwoole\ORM\Db\Connection->__construct(Array)
+#1 /data/www/vendor/easyswoole/easyswoole/src/Core.php(118): EasySwoole\EasySwoole\EasySwooleEvent::mainServerCreate(Object(EasySwoole\EasySwoole\Swoole\EventRegister))
+#2 /data/www/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Start.php(42): EasySwoole\EasySwoole\Core->createServer()
+#3 /data/www/vendor/easyswoole/easyswoole/src/Command/CommandContainer.php(46): EasySwoole\EasySwoole\Command\DefaultCommand\Start->exec(Array)
+#4 /data/www/vendor/easyswoole/easyswoole/src/Command/CommandRunner.php(52): EasySwoole\EasySwoole\Command\CommandContainer->hook('start', Array)
+#5 /data/www/easyswoole(24): EasySwoole\EasySwoole\Command\CommandRu at file:/data/www/vendor/easyswoole/orm/src/Db/Connection.php line:16]
+[2020-01-16 16:27:30][DEBUG][ERROR] : [SQLSTATE[HY000] [2002] Connection refused at file:/data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php line:21]
+[2020-01-16 16:28:00][DEBUG][ERROR] : [Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[HY000] [2002] Connection refused in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php:21
+Stack trace:
+#0 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\ORM\Db\MysqlPool->createObject()
+#1 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(230): EasySwoole\Pool\AbstractPool->initObject()
+#2 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(216): EasySwoole\Pool\AbstractPool->keepMin(5)
+#3 {main}
+  thrown at file:/data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php line:21]

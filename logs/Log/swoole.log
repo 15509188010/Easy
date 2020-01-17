@@ -1,0 +1,21 @@
+[2020-01-15 03:51:01 *124.2]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Class 'App\HttpController\co' not found in /data/www/App/HttpController/Index.php:16
+Stack trace:
+#0 {main}
+  thrown in /data/www/App/HttpController/Index.php on line 16
+[2020-01-15 03:51:01 $119.0]	WARNING	swManager_check_exit_status: worker#2[pid=124] abnormal exit, status=255, signal=0
+[2020-01-16 06:19:56 *217.2]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught ArgumentCountError: Too few arguments to function App\HttpController\Index::App\HttpController\{closure}(), 0 passed and exactly 1 expected in /data/www/App/HttpController/Index.php:16
+Stack trace:
+#0 [internal function]: App\HttpController\Index->App\HttpController\{closure}()
+#1 /data/www/vendor/easyswoole/component/src/Csp.php(45): call_user_func(Object(Closure))
+#2 {main}
+  thrown in /data/www/App/HttpController/Index.php on line 16
+[2020-01-16 06:19:56 $212.0]	WARNING	swManager_check_exit_status: worker#2[pid=217] abnormal exit, status=255, signal=0
+[2020-01-16 08:28:00 *474.1]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[HY000] [2002] Connection refused in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php:21
+Stack trace:
+#0 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\ORM\Db\MysqlPool->createObject()
+#1 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(230): EasySwoole\Pool\AbstractPool->initObject()
+#2 /data/www/vendor/easyswoole/pool/src/AbstractPool.php(216): EasySwoole\Pool\AbstractPool->keepMin(5)
+#3 {main}
+  thrown in /data/www/vendor/easyswoole/orm/src/Db/MysqlPool.php on line 21
+[2020-01-16 08:28:00 $470.0]	WARNING	swManager_check_exit_status: worker#1[pid=474] abnormal exit, status=255, signal=0
+[2020-01-17 02:03:04 $28.0]	INFO	Server is reloading all workers now
