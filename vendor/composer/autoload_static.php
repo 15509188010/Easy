@@ -12,6 +12,10 @@ class ComposerStaticInitb0fecaf4564ea328f167136ca64130ba
     );
 
     public static $prefixLengthsPsr4 = array (
+        't' => 
+        array (
+            'think\\' => 6,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
@@ -20,6 +24,7 @@ class ComposerStaticInitb0fecaf4564ea328f167136ca64130ba
         ),
         'P' => 
         array (
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Http\\Message\\' => 17,
             'PhpParser\\' => 10,
         ),
@@ -32,6 +37,7 @@ class ComposerStaticInitb0fecaf4564ea328f167136ca64130ba
             'EasySwoole\\Validate\\' => 20,
             'EasySwoole\\Utility\\' => 19,
             'EasySwoole\\Trigger\\' => 19,
+            'EasySwoole\\Template\\' => 20,
             'EasySwoole\\Task\\' => 16,
             'EasySwoole\\Spl\\Test\\' => 20,
             'EasySwoole\\Spl\\' => 15,
@@ -62,6 +68,10 @@ class ComposerStaticInitb0fecaf4564ea328f167136ca64130ba
     );
 
     public static $prefixDirsPsr4 = array (
+        'think\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-template/src',
+        ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-util',
@@ -73,6 +83,10 @@ class ComposerStaticInitb0fecaf4564ea328f167136ca64130ba
         'SuperClosure\\' => 
         array (
             0 => __DIR__ . '/..' . '/jeremeamia/superclosure/src',
+        ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -97,6 +111,10 @@ class ComposerStaticInitb0fecaf4564ea328f167136ca64130ba
         'EasySwoole\\Trigger\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/trigger/src',
+        ),
+        'EasySwoole\\Template\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/template/src',
         ),
         'EasySwoole\\Task\\' => 
         array (

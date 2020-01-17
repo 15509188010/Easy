@@ -2,7 +2,7 @@
 
 namespace EasySwoole\EasySwoole;
 
-use App\Router\Router;
+use App\Utility\Template;
 use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
 use EasySwoole\Http\Request;
@@ -12,6 +12,7 @@ use EasySwoole\ORM\Db\Connection;
 use EasySwoole\ORM\Db\Config;
 
 use App\Process\HotReload;
+use EasySwoole\Template\Render;
 
 class EasySwooleEvent implements Event
 {
@@ -47,6 +48,10 @@ class EasySwooleEvent implements Event
         /***************************************注册热重启进程*****************************************/
         $swooleServer = ServerManager::getInstance()->getSwooleServer();
         $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => true]))->getProcess());
+
+        /****************************************注册模版*********************************************/
+        Render::getInstance()->getConfig()->setRender(new Template());
+        Render::getInstance()->attachServer(ServerManager::getInstance()->getSwooleServer());
 
     }
 

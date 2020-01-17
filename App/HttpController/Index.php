@@ -4,7 +4,7 @@ namespace App\HttpController;
 
 use EasySwoole\Http\AbstractInterface\Controller;
 use EasySwoole\ORM\DbManager;
-
+use EasySwoole\Template\Render;
 
 class Index extends Controller
 {
@@ -19,18 +19,20 @@ class Index extends Controller
         $this->objMysqlPool = DbManager::getInstance();
     }
 
+    function reload(){
+        Render::getInstance()->restartWorker();
+        $this->response()->write(1);
+    }
 
-    /**
-     *
-     */
+
     public function index()
     {
-        echo 123;
+        $this->response()->write(Render::getInstance()->render('index',['time'=>time()]));
     }
 
     public function post()
     {
-        echo 'post';
+
     }
 
     protected function actionNotFound(?string $action)
