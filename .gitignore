@@ -1,4 +1,4 @@
 #git
-Log/
-logs/
-Temp/
+logs
+Temp
+Log

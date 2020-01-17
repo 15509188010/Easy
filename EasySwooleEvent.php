@@ -2,7 +2,6 @@
 
 namespace EasySwoole\EasySwoole;
 
-use App\Utility\Template;
 use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
 use EasySwoole\Http\Request;
@@ -11,6 +10,7 @@ use EasySwoole\ORM\DbManager;
 use EasySwoole\ORM\Db\Connection;
 use EasySwoole\ORM\Db\Config;
 
+use App\Utility\Template;
 use App\Process\HotReload;
 use EasySwoole\Template\Render;
 
