@@ -2,15 +2,15 @@
 
 namespace App\HttpController;
 
-use EasySwoole\Http\AbstractInterface\Controller;
 use EasySwoole\ORM\DbManager;
 use EasySwoole\Template\Render;
 
-class Index extends Controller
+class Index extends Base
 {
     private $objMysqlPool;
 
     /**
+     * Overrides
      * Index constructor.
      */
     public function __construct()
@@ -19,29 +19,20 @@ class Index extends Controller
         $this->objMysqlPool = DbManager::getInstance();
     }
 
-    function reload(){
+    /**
+     * 重启子进程
+     */
+    public function reload()
+    {
         Render::getInstance()->restartWorker();
         $this->response()->write(1);
     }
 
-
+    /**
+     *
+     */
     public function index()
     {
-        $this->response()->write(Render::getInstance()->render('index',['time'=>time()]));
-    }
-
-    public function post()
-    {
-
-    }
-
-    protected function actionNotFound(?string $action)
-    {
-        $this->response()->withStatus(404);
-        $file = EASYSWOOLE_ROOT . '/vendor/easyswoole/easyswoole/src/Resource/Http/404.html';
-        if (!is_file($file)) {
-            $file = EASYSWOOLE_ROOT . '/src/Resource/Http/404.html';
-        }
-        $this->response()->write(file_get_contents($file));
+        $this->response()->write(Render::getInstance()->render('index', ['time' => time()]));
     }
 }

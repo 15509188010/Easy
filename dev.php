@@ -20,14 +20,13 @@ return [
     ],
     'TEMP_DIR'    => '/logs/Temp',
     'LOG_DIR'     => 'logs/Log',
-
     /**************MYSQL****************/
     'MYSQL'       => [
-        'host'              => '192.168.0.110',//TODO(由于是在本地docker容器中的mysql,所以写ipv4地址)
-        'port'              => 3300,
-        'user'              => 'liaozesong',
-        'password'          => 'Lzslov123!',
-        'database'          => 'test',
+        'host'              => '182.61.41.38',//TODO(本地docker容器中的mysql,写ipv4地址)
+        'port'              => 3306,
+        'user'              => 'root',
+        'password'          => '123456',
+        'database'          => 'easy',
         'timeout'           => 5,
         'charset'           => 'utf8mb4',
         'maxIdleTime'       => 15,
@@ -35,5 +34,13 @@ return [
         'getObjectTimeout'  => 3,
         'maxObjectNum'      => 20,
         'minObjectNum'      => 5,
-    ]
+    ],
+    /***************REDIS****************/
+    'REDIS'         => [
+        'host'          => '182.61.41.38',//TODO(本地docker容器中的mysql,写ipv4地址)
+        'port'          => '6379',
+        'auth'          => '',
+        'POOL_MAX_NUM'  => '6',
+        'POOL_TIME_OUT' => '0.1',
+    ],
 ];

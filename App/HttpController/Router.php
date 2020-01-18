@@ -16,6 +16,9 @@ use EasySwoole\Http\Response;
 
 class Router extends AbstractRouter
 {
+    /**
+     * @param RouteCollector $routeCollector
+     */
     function initialize(RouteCollector $routeCollector)
     {
         $this->setGlobalMode(true);
