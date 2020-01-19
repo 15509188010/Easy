@@ -36,11 +36,13 @@ return [
         'minObjectNum'      => 5,
     ],
     /***************REDIS****************/
-    'REDIS'         => [
+    'REDIS'       => [
         'host'          => '182.61.41.38',//TODO(本地docker容器中的mysql,写ipv4地址)
         'port'          => '6379',
         'auth'          => '',
         'POOL_MAX_NUM'  => '6',
         'POOL_TIME_OUT' => '0.1',
+        'db'            => 0,
+        'serialize'     => \EasySwoole\Redis\Config\RedisConfig::SERIALIZE_NONE,//是否序列化
     ],
 ];

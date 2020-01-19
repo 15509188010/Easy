@@ -117,7 +117,6 @@ class WebSocketEvent
     {
         /** @var array $info */
         $info = $server->getClientInfo($fd);
-        echo 'on close fd:' . $fd;
         /**
          * 判断此fd 是否是一个有效的 websocket 连接
          * 参见 https://wiki.swoole.com/wiki/page/490.html
