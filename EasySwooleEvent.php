@@ -12,10 +12,15 @@ use EasySwoole\ORM\Db\Config;
 use EasySwoole\Socket\Dispatcher;
 use EasySwoole\Template\Render;
 
+use App\WebSocket\WebSocketEvent;
 use App\WebSocket\WebSocketParser;
 use App\Utility\Template;
 use App\Process\HotReload;
 
+/**
+ * Class EasySwooleEvent
+ * @package EasySwoole\EasySwoole
+ */
 class EasySwooleEvent implements Event
 {
 
@@ -64,6 +69,13 @@ class EasySwooleEvent implements Event
         // 给server 注册相关事件 在 WebSocket 模式下  on message 事件必须注册 并且交给 Dispatcher 对象处理
         $register->set(EventRegister::onMessage, function (\swoole_websocket_server $server, \swoole_websocket_frame $frame) use ($dispatch) {
             $dispatch->dispatch($server, $frame->data, $frame);
+        });
+        $websocketEvent = new WebSocketEvent();
+        $register->set(EventRegister::onHandShake, function (\swoole_http_request $request, \swoole_http_response $response) use ($websocketEvent) {
+            $websocketEvent->onHandShake($request, $response);//自定义握手事件
+        });
+        $register->set(EventRegister::onClose, function (\swoole_server $server, int $fd, int $reactorId) use ($websocketEvent) {
+            $websocketEvent->onClose($server, $fd, $reactorId);//自定义关闭事件
         });
     }
 
