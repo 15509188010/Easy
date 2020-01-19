@@ -2,9 +2,10 @@
 
 namespace App\HttpController;
 
-use App\Utility\Email;
 use EasySwoole\ORM\DbManager;
 use EasySwoole\Template\Render;
+
+use App\Utility\Email;
 
 class Index extends Base
 {
