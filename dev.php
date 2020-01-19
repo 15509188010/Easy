@@ -45,4 +45,14 @@ return [
         'db'            => 0,
         'serialize'     => \EasySwoole\Redis\Config\RedisConfig::SERIALIZE_NONE,//是否序列化
     ],
+
+    /****************SMTP******************/
+    'EMAIL'=>       [
+        'server'       => 'smtp.163.com',
+        'ssl'          => false,
+        'username'     => 'chengsimingLIVE@163.com',
+        'password'     => 'csm1143669542',
+        'timeout'      => 10,
+        'maxPackage'   => 1024*1024*5,
+    ],
 ];

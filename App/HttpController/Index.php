@@ -2,6 +2,7 @@
 
 namespace App\HttpController;
 
+use App\Utility\Email;
 use EasySwoole\ORM\DbManager;
 use EasySwoole\Template\Render;
 
@@ -33,6 +34,7 @@ class Index extends Base
      */
     public function index()
     {
+        //Email::send('1023125136@qq.com','123456');测试发送邮件
         $this->response()->write(Render::getInstance()->render('index', ['time' => time()]));
     }
 }

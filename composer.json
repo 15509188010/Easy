@@ -7,7 +7,8 @@
         "easyswoole/socket": "^1.1",
         "easyswoole/redis": "^1.1",
         "easyswoole/redis-pool": "^2.0",
-        "easyswoole/jwt": "^1.0"
+        "easyswoole/jwt": "^1.0",
+        "easyswoole/smtp": "^1.0"
     },
     "autoload": {
         "psr-4": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "056e57be935dd078b2029b0bf0476ddb",
+    "content-hash": "43e8979969d396f7992ff1f26e0a02a3",
     "packages": [
         {
             "name": "dragonmantank/cron-expression",
@@ -788,6 +788,54 @@
                 "swoole"
             ],
             "time": "2019-12-14T05:03:43+00:00"
+        },
+        {
+            "name": "easyswoole/smtp",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/easy-swoole/smtp.git",
+                "reference": "5881a97b658e87271a03e224f9e5877665cd7cd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/easy-swoole/smtp/zipball/5881a97b658e87271a03e224f9e5877665cd7cd9",
+                "reference": "5881a97b658e87271a03e224f9e5877665cd7cd9",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "easyswoole/spl": "^1.1",
+                "easyswoole/utility": "^1.0",
+                "ext-swoole": "^4.2.6",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "easyswoole/swoole-ide-helper": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EasySwoole\\Smtp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "RunsTp",
+                    "email": "runstp@163.com"
+                }
+            ],
+            "description": "EasySwoole mailer component",
+            "time": "2019-11-07T14:54:10+00:00"
         },
         {
             "name": "easyswoole/socket",

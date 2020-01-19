@@ -42,6 +42,7 @@ class ComposerStaticInitb0fecaf4564ea328f167136ca64130ba
             'EasySwoole\\Spl\\Test\\' => 20,
             'EasySwoole\\Spl\\' => 15,
             'EasySwoole\\Socket\\' => 18,
+            'EasySwoole\\Smtp\\' => 16,
             'EasySwoole\\Redis\\' => 17,
             'EasySwoole\\RedisPool\\' => 21,
             'EasySwoole\\Pool\\' => 16,
@@ -135,6 +136,10 @@ class ComposerStaticInitb0fecaf4564ea328f167136ca64130ba
         'EasySwoole\\Socket\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/socket/src',
+        ),
+        'EasySwoole\\Smtp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/smtp/src',
         ),
         'EasySwoole\\Redis\\' => 
         array (
