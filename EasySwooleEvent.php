@@ -9,10 +9,12 @@ use EasySwoole\Http\Response;
 use EasySwoole\ORM\DbManager;
 use EasySwoole\ORM\Db\Connection;
 use EasySwoole\ORM\Db\Config;
+use EasySwoole\Socket\Dispatcher;
+use EasySwoole\Template\Render;
 
+use App\WebSocket\WebSocketParser;
 use App\Utility\Template;
 use App\Process\HotReload;
-use EasySwoole\Template\Render;
 
 class EasySwooleEvent implements Event
 {
@@ -26,11 +28,12 @@ class EasySwooleEvent implements Event
     /**
      * @param EventRegister $register
      * @throws \EasySwoole\Pool\Exception\Exception
+     * @throws \EasySwoole\Socket\Exception\Exception
      */
     public static function mainServerCreate(EventRegister $register)
     {
         // TODO: Implement mainServerCreate() method.
-        /************************************MYSQL连接池********************************************/
+        /**************************************MYSQL连接池********************************************/
         $mysqlConf = \EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL');
         $config = new Config();
         $config->setDatabase($mysqlConf['database']);
@@ -49,10 +52,19 @@ class EasySwooleEvent implements Event
         $swooleServer = ServerManager::getInstance()->getSwooleServer();
         $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => true]))->getProcess());
 
-        /****************************************注册模版*********************************************/
+        /***************************************注册模版*********************************************/
         Render::getInstance()->getConfig()->setRender(new Template());
         Render::getInstance()->attachServer(ServerManager::getInstance()->getSwooleServer());
 
+        /***************************************注册WEBSOCKET服务********************************************/
+        $conf = new \EasySwoole\Socket\Config();// 创建一个 Dispatcher 配置
+        $conf->setType(\EasySwoole\Socket\Config::WEB_SOCKET);// 设置 Dispatcher 为 WebSocket 模式
+        $conf->setParser(new WebSocketParser());// 设置解析器对象
+        $dispatch = new Dispatcher($conf);// 创建 Dispatcher 对象 并注入 config 对象
+        // 给server 注册相关事件 在 WebSocket 模式下  on message 事件必须注册 并且交给 Dispatcher 对象处理
+        $register->set(EventRegister::onMessage, function (\swoole_websocket_server $server, \swoole_websocket_frame $frame) use ($dispatch) {
+            $dispatch->dispatch($server, $frame->data, $frame);
+        });
     }
 
     public static function onRequest(Request $request, Response $response): bool
