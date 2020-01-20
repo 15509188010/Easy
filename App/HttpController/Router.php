@@ -23,6 +23,7 @@ class Router extends AbstractRouter
     {
         $this->setGlobalMode(true);
         $routeCollector->addRoute(['POST', 'GET'], '/index', 'Index/index');
+        $routeCollector->addRoute(['POST', 'GET'], '/login', 'Index/login');
         $this->setRouterNotFoundCallBack(function (Request $request, Response $response) {
             $response->write('未找到路由匹配');
             return '/index';//重定向到index路由

@@ -32,4 +32,9 @@ class Index extends Base
     {
         $this->response()->write(Render::getInstance()->render('index', ['time' => time()]));
     }
+
+    public function login()
+    {
+        $this->response()->write(Render::getInstance()->render('login', ['time' => time()]));
+    }
 }
