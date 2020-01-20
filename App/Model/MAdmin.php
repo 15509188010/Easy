@@ -13,8 +13,8 @@ use EasySwoole\ORM\AbstractModel;
 class MAdmin extends AbstractModel
 {
     protected $tableName = 'easy_admin';
-
     protected $primaryKey = 'id';
-
-
+    protected $autoTimeStamp = true;
+    protected $createTime = 'createTime';
+    protected $updateTime = 'updateTime';
 }

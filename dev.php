@@ -25,7 +25,7 @@ return [
         'host'              => '182.61.41.38',//TODO(本地docker容器中的mysql,写ipv4地址)
         'port'              => 3306,
         'user'              => 'root',
-        'password'          => '123456',
+        'password'          => 'csm1143669542',
         'database'          => 'easy',
         'timeout'           => 5,
         'charset'           => 'utf8mb4',
@@ -39,7 +39,7 @@ return [
     'REDIS'       => [
         'host'          => '182.61.41.38',//TODO(本地docker容器中的mysql,写ipv4地址)
         'port'          => '6379',
-        'auth'          => '',
+        'auth'          => 'csm1143669542',
         'POOL_MAX_NUM'  => '6',
         'POOL_TIME_OUT' => '0.1',
         'db'            => 0,

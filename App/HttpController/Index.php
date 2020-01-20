@@ -2,14 +2,10 @@
 
 namespace App\HttpController;
 
-use EasySwoole\ORM\DbManager;
 use EasySwoole\Template\Render;
-
-use App\Utility\Email;
 
 class Index extends Base
 {
-    private $objMysqlPool;
 
     /**
      * Overrides
@@ -18,7 +14,6 @@ class Index extends Base
     public function __construct()
     {
         parent::__construct();
-        $this->objMysqlPool = DbManager::getInstance();
     }
 
     /**
@@ -31,11 +26,10 @@ class Index extends Base
     }
 
     /**
-     *
+     * @throws \EasySwoole\ORM\Exception\Exception
      */
     public function index()
     {
-        //Email::send('1023125136@qq.com','123456');测试发送邮件
         $this->response()->write(Render::getInstance()->render('index', ['time' => time()]));
     }
 }
