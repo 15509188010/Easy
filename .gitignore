@@ -2,3 +2,5 @@
 logs
 Temp
 Log
+.idea/
+.DS_Store
