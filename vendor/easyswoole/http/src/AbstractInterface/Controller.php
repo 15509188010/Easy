@@ -92,6 +92,7 @@ abstract class Controller
 
     protected function onRequest(?string $action): ?bool
     {
+        // TODO: Implement onRequest() method.
         return true;
     }
 
@@ -152,8 +153,8 @@ abstract class Controller
         if (!$this->response()->isEndResponse()) {
             $data = Array(
                 "code" => $statusCode,
-                "result" => $result,
-                "msg" => $msg
+                "data" => $result,
+                "message" => $msg
             );
             $this->response()->write(json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
             $this->response()->withHeader('Content-type', 'application/json;charset=utf-8');

@@ -22,14 +22,14 @@ class Router extends AbstractRouter
     function initialize(RouteCollector $routeCollector)
     {
         $this->setGlobalMode(true);
-        $routeCollector->addRoute(['POST', 'GET'], '/index', 'Index/index');
-        $routeCollector->addRoute(['POST', 'GET'], '/login', 'Index/login');
+        $routeCollector->addRoute('POST', '/user/login', '/User/User/login');//@后台登陆
+        $routeCollector->addRoute('GET','/user/info','/User/User/getInfo');//@获取当前用户信息
         $this->setRouterNotFoundCallBack(function (Request $request, Response $response) {
-            $response->write('未找到路由匹配');
+            $response->write('not found router');
             return '/index';//重定向到index路由
         });
         $this->setMethodNotAllowCallBack(function (Request $request,Response $response){
-            $response->write('未找到处理方法');
+            $response->write('not found method');
             return false;//结束此次响应
         });
     }

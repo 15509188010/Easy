@@ -58,4 +58,14 @@ class Base extends Controller
         $this->response()->write(file_get_contents($file));
     }
 
+    /**
+     * 获取json参数
+     * @return array|mixed
+     */
+    public function getRawJson()
+    {
+        $data=$this->request()->getBody()->__toString();
+        if (empty($data)) return [];
+        return json_decode($data, true);
+    }
 }
