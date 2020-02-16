@@ -24,7 +24,7 @@ class Router extends AbstractRouter
         $this->setGlobalMode(true);
         $routeCollector->addRoute('POST', '/admin/user/login', '/Manage/User/User/login');//@后台登陆
         $routeCollector->addRoute('GET', '/admin/user/info', '/Manage/User/User/getInfo');//@获取当前用户信息
-        $routeCollector->addRoute('POST', '/admin/user/logout', '/Manage/User/User/logout');//@退出登陆
+        $routeCollector->addRoute('POST', '/admin/user/getAll', '/Manage/User/User/getAll');//@管理员列表
         $this->setRouterNotFoundCallBack(function (Request $request, Response $response) {
             $response->write('not found router');
             return '';//重定向到index路由
