@@ -22,9 +22,19 @@ class Router extends AbstractRouter
     function initialize(RouteCollector $routeCollector)
     {
         $this->setGlobalMode(true);
+        /**
+         * Manage路由
+         */
         $routeCollector->addRoute('POST', '/admin/user/login', '/Manage/User/User/login');//@后台登陆
         $routeCollector->addRoute('GET', '/admin/user/info', '/Manage/User/User/getInfo');//@获取当前用户信息
         $routeCollector->addRoute('POST', '/admin/user/getAll', '/Manage/User/User/getAll');//@管理员列表
+
+        /**
+         * Api路由
+         */
+        $routeCollector->addRoute('POST', '/api/user/login', '/Api/User/User/login');//@前台登陆
+        $routeCollector->addRoute('GET', '/api/user/getUser', '/Api/User/User/getUser');//@获取我的信息
+        $routeCollector->addRoute('POST', '/api/user/register', '/Api/User/User/register');//@注册
         $this->setRouterNotFoundCallBack(function (Request $request, Response $response) {
             $response->write('not found router');
             return '';//重定向到index路由

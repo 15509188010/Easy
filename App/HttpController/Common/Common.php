@@ -64,8 +64,34 @@ class Common
                     break;
             }
         } catch (\EasySwoole\Jwt\Exception $e) {
-            return ResultWrapper::fail($e->getMessage(), ErrCode::$paramError);
+            return ResultWrapper::fail($e->getMessage(), ErrCode::$notAllowToken);
         }
+    }
+
+    /**
+     * 验证手机号是否正确
+     * @param $mobile
+     * @return bool
+     */
+    public static function isMobile($mobile) {
+        if (!is_numeric($mobile)) {
+            return false;
+        }
+        return preg_match('#^1[3,4,5,7,8,9]{1}[\d]{9}$#', $mobile) ? true : false;
+    }
+
+
+    /**
+     * 正则表达式验证email格式
+     *
+     * @param string $str    所要验证的邮箱地址
+     * @return boolean
+     */
+    public static function isEmail($str) {
+        if (!$str) {
+            return false;
+        }
+        return preg_match('#[a-z0-9&\-_.]+@[\w\-_]+([\w\-.]+)?\.[\w\-]+#is', $str) ? true : false;
     }
 
 }

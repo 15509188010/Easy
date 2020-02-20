@@ -11,7 +11,6 @@ namespace App\Model;
 use App\HttpController\Common\ErrCode;
 use App\HttpController\Common\StatusCode;
 use App\Utility\ResultWrapper;
-use EasySwoole\EasySwoole\Config;
 use EasySwoole\ORM\AbstractModel;
 
 class MAdmin extends AbstractModel
