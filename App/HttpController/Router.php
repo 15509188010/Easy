@@ -35,6 +35,8 @@ class Router extends AbstractRouter
         $routeCollector->addRoute('POST', '/api/user/login', '/Api/User/User/login');//@前台登陆
         $routeCollector->addRoute('GET', '/api/user/getUser', '/Api/User/User/getUser');//@获取我的信息
         $routeCollector->addRoute('POST', '/api/user/register', '/Api/User/User/register');//@注册
+        $routeCollector->addRoute('GET', '/api/index/banner', '/Api/Index/Index/banner');//@首页banner
+        $routeCollector->addRoute('GET', '/api/index/secGoodsList', '/Api/Index/Index/secGoodsList');//@首页秒杀商品列表
         $this->setRouterNotFoundCallBack(function (Request $request, Response $response) {
             $response->write('not found router');
             return '';//重定向到index路由

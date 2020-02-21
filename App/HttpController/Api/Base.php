@@ -15,7 +15,7 @@ class Base extends Controller
         // TODO: Implement index() method.
     }
 
-    public static $allowAction = ['login', 'logout', 'register'];//不需要验证token的方法
+    public static $allowAction = ['login', 'logout', 'register', 'banner', 'secGoodsList'];//不需要验证token的方法
 
     /**
      * Overrides
